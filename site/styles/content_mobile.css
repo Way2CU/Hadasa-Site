@@ -1,0 +1,33 @@
+/**
+ * Content Mobile Style Sheet
+ * Hadasa Referral
+ *
+ * Copyright (c) 2015. by Way2CU, http://way2cu.com
+ * Authors: Eyal Gershon
+ */
+
+div.wrap {
+ 	background-image: url(/site/images/mobile-landingpage-background.jpg);
+ }
+
+img#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+h1, h2 {
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding-top: 20px;
+}
+
+h2 {
+	padding-bottom: 20px;
+}
+
+
