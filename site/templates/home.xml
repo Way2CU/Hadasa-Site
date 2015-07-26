@@ -9,7 +9,16 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<h1>It works!</h1>
+			<div class="wrap">
+				<img
+					src="_BASEURL.'/site/images/optimal-logo-white.svg'"
+					alt="optimal-logo"
+					id="logo"
+					cms:eval="src"
+				/>
+				<h1><cms:text constant="worth_more"/></h1>
+				<h2><cms:text constant="10_precent"/></h2>
+			</div>
 		</body>
 	</html>
 </document>
