@@ -49,6 +49,30 @@ Site.is_mobile = function() {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
+
+	$('form').submit(function(event) {
+		var name = $('input[name="name"]').val();
+		var phone = $('input[name="phone"]').val();
+		if (name != ""&&phone != ""){
+			localStorage.setItem('stored_name', name);
+			localStorage.setItem('stored_phone', phone);
+			window.setTimeout(function() {
+			    window.location.href = '/';
+			}, 5000);
+		}
+	});
+
+	var stored_name = localStorage.getItem('stored_name');
+	var stored_phone = localStorage.getItem('stored_phone');
+
+	if (stored_name != null&&stored_phone != null) {
+		$("body h2").remove();
+		$("h1").text("הכניסו את שמכם וקבלו הנחה");
+		$("input[name='stored_name']").val(stored_name);
+		$("input[name='stored_phone']").val(stored_phone);
+	}
+
+
 };
 
 
