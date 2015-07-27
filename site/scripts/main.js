@@ -50,21 +50,29 @@ Site.is_mobile = function() {
  */
 Site.on_load = function() {
 
+
 	$('form').submit(function(event) {
+
+		// Pull values from initial form.
 		var name = $('input[name="name"]').val();
 		var phone = $('input[name="phone"]').val();
+
+		// if variables have values store them into localStorage.
 		if (name != ""&&phone != ""){
 			localStorage.setItem('stored_name', name);
 			localStorage.setItem('stored_phone', phone);
+		// Refresh the page after storing data to localStorage
 			window.setTimeout(function() {
 			    window.location.href = '/';
 			}, 5000);
 		}
 	});
 
+	// pull localStorage items into variables.
 	var stored_name = localStorage.getItem('stored_name');
 	var stored_phone = localStorage.getItem('stored_phone');
 
+	// If localStorage items are set inject them into hidden form fields.
 	if (stored_name != null&&stored_phone != null) {
 		$("body h2").remove();
 		$("h1").text("הכניסו את שמכם וקבלו הנחה");
