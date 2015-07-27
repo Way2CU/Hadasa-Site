@@ -18,6 +18,11 @@
 				/>
 				<h1><cms:text constant="worth_more"/></h1>
 				<h2><cms:text constant="10_precent"/></h2>
+				<cms:module
+					name="contact_form"
+					action="show"
+					text_id="referral_form"
+					/>
 			</div>
 		</body>
 	</html>

@@ -1,5 +1,5 @@
 /**
- * Content Mobile Style Sheet
+ * Content Style Sheet
  * Hadasa Referral
  *
  * Copyright (c) 2015. by Way2CU, http://way2cu.com
@@ -7,17 +7,17 @@
  */
 
 div.wrap {
- 	background-image: url(/site/images/mobile-landingpage-background.jpg);
+ 	background-image: url(/site/images/desktop-landingpage-background.jpg);
  	background-repeat: no-repeat;
  	background-size: cover;
- 	min-height: 570px;
+ 	min-height: 1000px;
  }
 
 img#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 20%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -47,11 +47,20 @@ form input {
 	padding: 10px 20px;
 	font-size: 1.5em;
 	color: white;
-	width: 80%;
+	width: 20%;
 	margin-bottom: 20px;
 	background-color: rgba(255, 255, 255, 0);
-	border: 1px solid white;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-radius: 10px;
+	transition: 0.3s all;
+}
+
+form label input:hover {
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+form label input:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
 }
 
 ::-webkit-input-placeholder {
@@ -74,7 +83,7 @@ div.controls button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 20%;
 	padding: 10px 20px;
 	color: white;
 	font-size: 1.5em;
@@ -85,5 +94,12 @@ div.controls button {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	transition: 0.3s all;
+}
+
+div.controls button:hover {
+	cursor: pointer;
+	background: rgba(46, 204, 113, 1);
+	border: 2px solid rgba(255, 255, 255, 1);
 }
 
