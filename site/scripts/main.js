@@ -64,7 +64,7 @@ Site.on_load = function() {
 		// Refresh the page after storing data to localStorage
 			window.setTimeout(function() {
 			    window.location.href = '/';
-			}, 5000);
+			}, 1000);
 		}
 	});
 
