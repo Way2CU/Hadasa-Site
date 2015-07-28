@@ -51,34 +51,40 @@ Site.is_mobile = function() {
 Site.on_load = function() {
 
 
-	$('form').submit(function(event) {
+	// get values from local storage
+var stored_name = localStorage.getItem('stored_name');
+var stored_phone = localStorage.getItem('stored_phone');
 
-		// Pull values from initial form.
-		var name = $('input[name="name"]').val();
-		var phone = $('input[name="phone"]').val();
+// populate cached data
+if (stored_name != null && stored_phone != null) {
+    $('body h2').remove();
+    $('h1').text(stored_name + ' מזמין אתכם לקבל הנחה, אנא מלאו את הטופס');
+    $('input[name=stored_name]').val(stored_name);
+    $('input[name=stored_phone]').val(stored_phone);
 
-		// if variables have values store them into localStorage.
-		if (name != ""&&phone != ""){
-			localStorage.setItem('stored_name', name);
-			localStorage.setItem('stored_phone', phone);
-		// Refresh the page after storing data to localStorage
-			window.setTimeout(function() {
-			    window.location.href = '/';
-			}, 1000);
-		}
-	});
+} else {
+    // no data was found, on submit cache data
+    $('form')
+    .off('submit')
+    .submit(function(event) {
+        // prevent form submission
+        event.preventDefault();
 
-	// pull localStorage items into variables.
-	var stored_name = localStorage.getItem('stored_name');
-	var stored_phone = localStorage.getItem('stored_phone');
+        // get form values to store
+        var name = $('input[name="name"]').val();
+        var phone = $('input[name="phone"]').val();
 
-	// If localStorage items are set inject them into hidden form fields.
-	if (stored_name != null&&stored_phone != null) {
-		$("body h2").remove();
-		$("h1").text("הכניסו את שמכם וקבלו הנחה");
-		$("input[name='stored_name']").val(stored_name);
-		$("input[name='stored_phone']").val(stored_phone);
-	}
+        // make sure we have something to cache
+        if (name == "" || phone == "")
+            return;
+
+        localStorage.setItem('stored_name', name);
+        localStorage.setItem('stored_phone', phone);
+
+        // refresh the page after storing data
+        window.location.reload();
+    });
+}
 
 
 };
