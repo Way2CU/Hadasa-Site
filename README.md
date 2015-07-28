@@ -1,4 +1,4 @@
-Hadasa Referral
+Hadasa Referral Site
 ========================
 
 License
